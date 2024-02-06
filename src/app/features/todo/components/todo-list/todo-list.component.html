@@ -1,0 +1,25 @@
+<div>
+  <div class="my-4 flex justify-end">
+    <button type="button" class="rounded bg-sky-600 px-4 py-2 font-bold">ADD NEW</button>
+  </div>
+  <table class="w-full ">
+    <thead>
+    <tr class="*:py-1 bg-slate-500">
+      <th>Titolo</th>
+      <th>Descrizione</th>
+      <th>Stato</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if ((todos$ | async); as todos) {
+      @for (todo of todos; track $index) {
+        <tr class="*:border-y *:py-3" >
+          <td>{{todo.title}}</td>
+          <td>{{todo.description}}</td>
+          <td>{{todo.status}}</td>
+        </tr>
+      }
+    }
+    </tbody>
+  </table>
+</div>
